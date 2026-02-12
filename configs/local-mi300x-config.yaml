@@ -1,0 +1,61 @@
+# Local MI300X Server Configuration
+# Server: 10.23.45.34
+# GPUs: 8x MI300X
+
+# This file documents the configuration for your local server
+# It's for reference only - the actual config is in .github/configs/amd-master.yaml
+
+server:
+  ip: "10.23.45.34"
+  hostname: "mi300x-local"
+  gpus: 8
+  gpu_type: "MI300X"
+
+environment:
+  hf_cache: "/data/hf_hub_cache/"
+  workspace: "/home/user/InferenceMAX"
+  docker_runtime: "rocm"
+
+runner:
+  name: "mi300x-local_0"
+  labels:
+    - "mi300x-local_0"
+    - "mi300x"
+  type: "self-hosted"
+
+# Supported configurations (from amd-master.yaml)
+benchmarks:
+  gptoss-fp4:
+    image: "vllm/vllm-openai-rocm:v0.14.0"
+    model: "openai/gpt-oss-120b"
+    framework: "vllm"
+    precision: "fp4"
+
+    # Sequence length configurations
+    seq_len_configs:
+      - isl: 1024
+        osl: 1024
+        tp_options: [1, 2, 4, 8]
+        conc_ranges:
+          tp1: [64]
+          tp2: [4, 8, 16, 32, 64]
+          tp4: [4, 8, 16, 32, 64]
+          tp8: [4, 8, 16]
+
+      - isl: 1024
+        osl: 8192
+        tp_options: [1, 2, 4, 8]
+        conc_ranges:
+          tp1: [64]
+          tp2: [4, 8, 16, 32, 64]
+          tp4: [4, 8, 16, 32, 64]
+          tp8: [4, 8, 16]
+
+      - isl: 8192
+        osl: 1024
+        tp_options: [1, 2, 4, 8]
+        conc_ranges:
+          tp1: [4, 8, 16, 32, 64]
+          tp2: [4, 8, 16, 32, 64]
+          tp4: [4, 8, 16, 32, 64]
+          tp8: [4, 8, 16]

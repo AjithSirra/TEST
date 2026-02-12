@@ -1,0 +1,25 @@
+# Example: Quick GPTOSS FP4 Test on Local MI300X
+# This runs only 1k1k workload with limited configurations for fast testing
+
+# To use this:
+# 1. Copy this entry to the main perf-changelog.yaml file
+# 2. Update the date to today's date
+# 3. Update the author to your GitHub username
+# 4. Create a PR with the change
+# 5. Add the "sweep-enabled" label to the PR
+
+- date: "2026-02-12"
+  author: "your-github-username"
+  description: "Quick GPTOSS FP4 test on local MI300X (1k1k only)"
+  change-type: "test"
+  configs:
+    - model-prefix: gptoss
+      precision: fp4
+      framework: vllm
+      runner: mi300x
+      seq-lens: [1k1k]
+      max-tp: 8
+      max-conc: 16
+      # This will run only a subset:
+      # - TP=1,2,4,8 with CONC up to 16
+      # Total configs: ~10-15 benchmark runs

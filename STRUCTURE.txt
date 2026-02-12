@@ -1,0 +1,52 @@
+InferenceMAX Test Configuration
+================================
+
+test/
+├── INDEX.md                                    📋 Master index (navigation)
+├── QUICKSTART.md                               🚀 Get started in 3 steps
+├── README.md                                   📖 Overview
+│
+├── docs/                                       📚 Documentation
+│   ├── SETUP_RUNNER.md                        🔧 Runner installation guide
+│   ├── TRIGGER_BENCHMARKS.md                  ▶️  How to run benchmarks
+│   └── TROUBLESHOOTING.md                     🆘 Common issues & solutions
+│
+├── runners/                                    🏃 Runner Scripts
+│   └── launch_mi300x-local.sh                 ✅ COPY TO: runners/
+│
+├── configs/                                    ⚙️  Configuration Files
+│   ├── runners-update.yaml                    ✅ APPLY TO: .github/configs/runners.yaml
+│   └── local-mi300x-config.yaml               📝 Reference only
+│
+├── workflows/                                  🔄 GitHub Workflows
+│   └── test-local-mi300x.yml                  📋 Optional: Custom workflow
+│
+├── perf-changelog-examples/                    📊 Perf Changelog Templates
+│   ├── gptoss-fp4-quick.yaml                  ⚡ Quick test (~10 runs)
+│   ├── gptoss-fp4-specific.yaml               🎯 Specific config (3 runs)
+│   ├── gptoss-fp4-full.yaml                   🌐 Full sweep (~45 runs)
+│   └── multiple-models.yaml                   🔀 Multiple models (~20 runs)
+│
+└── scripts/                                    💻 Helper Scripts
+    ├── setup_environment.sh                   🔍 Environment checker
+    ├── run_local_benchmark.sh                 🏃 Single benchmark
+    └── run_sweep.sh                           📈 Full sweep
+
+Quick Start
+-----------
+1. Read: QUICKSTART.md
+2. Setup: docs/SETUP_RUNNER.md
+3. Run: docs/TRIGGER_BENCHMARKS.md
+4. Help: docs/TROUBLESHOOTING.md
+
+Files to Copy/Update
+--------------------
+✅ Copy: runners/launch_mi300x-local.sh → runners/
+✅ Edit: .github/configs/runners.yaml (add mi300x-local_0)
+📋 Optional: workflows/test-local-mi300x.yml → .github/workflows/
+
+Perf Changelog Examples
+-----------------------
+Copy any example from perf-changelog-examples/ to main perf-changelog.yaml
+
+Total: 17 files created

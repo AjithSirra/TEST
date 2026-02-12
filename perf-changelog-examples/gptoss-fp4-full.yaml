@@ -1,0 +1,23 @@
+# Example: Full GPTOSS FP4 Sweep on Local MI300X
+# This will run ALL configurations from amd-master.yaml for GPTOSS FP4
+
+# To use this:
+# 1. Copy this entry to the main perf-changelog.yaml file at the repo root
+# 2. Update the date to today's date
+# 3. Update the author to your GitHub username
+# 4. Create a PR with the change
+# 5. Add the "sweep-enabled" label to the PR
+# 6. Benchmarks will run automatically
+
+- date: "2026-02-12"
+  author: "your-github-username"
+  description: "Full GPTOSS FP4 performance sweep on local MI300X server"
+  change-type: "test"
+  configs:
+    - model-prefix: gptoss
+      precision: fp4
+      framework: vllm
+      runner: mi300x
+      seq-lens: [1k1k, 1k8k, 8k1k]
+      # This will run all TP and concurrency configurations
+      # Total configs: ~40-50 benchmark runs

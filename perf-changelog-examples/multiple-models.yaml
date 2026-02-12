@@ -1,0 +1,32 @@
+# Example: Run Multiple Models on Local MI300X
+# This shows how to test both GPTOSS and DeepSeek models
+
+# To use this:
+# 1. Copy this entry to the main perf-changelog.yaml file
+# 2. Update the date to today's date
+# 3. Update the author to your GitHub username
+# 4. Create a PR with the change
+# 5. Add the "sweep-enabled" label to the PR
+
+- date: "2026-02-12"
+  author: "your-github-username"
+  description: "Multi-model benchmark sweep on local MI300X"
+  change-type: "test"
+  configs:
+    # GPTOSS FP4
+    - model-prefix: gptoss
+      precision: fp4
+      framework: vllm
+      runner: mi300x
+      seq-lens: [1k1k]
+      max-tp: 8
+      max-conc: 16
+
+    # DeepSeek FP8 (if you have the model)
+    - model-prefix: dsr1
+      precision: fp8
+      framework: sglang
+      runner: mi300x
+      seq-lens: [1k1k]
+      max-tp: 8
+      max-conc: 16

@@ -1,0 +1,70 @@
+================================================================================
+INFERENCEMAX LOCAL MI300X - ALL FILES CREATED
+================================================================================
+
+Total: 18 files created in test/ folder
+
+================================================================================
+NAVIGATION & OVERVIEW (4 files)
+================================================================================
+
+1. START_HERE.md               READ THIS FIRST - Quick 3-step setup
+2. QUICKSTART.md               Detailed quick start guide
+3. INDEX.md                    Complete file index with navigation
+4. README.md                   Overview and file structure
+
+================================================================================
+DOCUMENTATION (3 comprehensive guides)
+================================================================================
+
+5. docs/SETUP_RUNNER.md        Self-hosted runner installation
+6. docs/TRIGGER_BENCHMARKS.md  All methods to run benchmarks
+7. docs/TROUBLESHOOTING.md     Common issues and solutions
+
+================================================================================
+CONFIGURATION FILES (3 files)
+================================================================================
+
+8. runners/launch_mi300x-local.sh     COPY TO: runners/
+9. configs/runners-update.yaml        APPLY TO: .github/configs/runners.yaml
+10. configs/local-mi300x-config.yaml  Reference only
+
+================================================================================
+WORKFLOWS (1 optional file)
+================================================================================
+
+11. workflows/test-local-mi300x.yml   Optional: Copy to .github/workflows/
+
+================================================================================
+PERF CHANGELOG EXAMPLES (4 templates)
+================================================================================
+
+12. perf-changelog-examples/gptoss-fp4-quick.yaml      (~10 runs)
+13. perf-changelog-examples/gptoss-fp4-specific.yaml   (3 runs)
+14. perf-changelog-examples/gptoss-fp4-full.yaml       (~45 runs)
+15. perf-changelog-examples/multiple-models.yaml       (~20 runs)
+
+================================================================================
+HELPER SCRIPTS (3 bash scripts)
+================================================================================
+
+16. scripts/setup_environment.sh      Environment checker
+17. scripts/run_local_benchmark.sh    Single benchmark runner
+18. scripts/run_sweep.sh              Full sweep runner
+
+================================================================================
+REQUIRED ACTIONS
+================================================================================
+
+1. Copy: test/runners/launch_mi300x-local.sh → runners/
+2. Edit: .github/configs/runners.yaml (add mi300x-local_0)
+3. Commit and push changes
+4. Set GitHub secrets: HF_TOKEN, REPO_PAT
+
+================================================================================
+QUICK START
+================================================================================
+
+Read: START_HERE.md for complete 3-step setup guide
+
+All files ready to use!

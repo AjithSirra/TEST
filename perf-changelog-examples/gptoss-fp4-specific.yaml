@@ -1,0 +1,26 @@
+# Example: Specific GPTOSS FP4 Configuration on Local MI300X
+# This runs only specific TP and concurrency values
+
+# To use this:
+# 1. Copy this entry to the main perf-changelog.yaml file
+# 2. Update the date to today's date
+# 3. Update the author to your GitHub username
+# 4. Create a PR with the change
+# 5. Add the "sweep-enabled" label to the PR
+
+- date: "2026-02-12"
+  author: "your-github-username"
+  description: "GPTOSS FP4 TP=8 performance test on local MI300X"
+  change-type: "test"
+  configs:
+    - model-prefix: gptoss
+      precision: fp4
+      framework: vllm
+      runner: mi300x
+      seq-lens: [1k1k]
+      max-tp: 8
+      min-tp: 8
+      conc-list: [4, 8, 16]
+      # This will run only:
+      # - TP=8 with CONC=4,8,16
+      # Total configs: 3 benchmark runs

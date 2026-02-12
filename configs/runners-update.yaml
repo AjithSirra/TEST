@@ -1,0 +1,21 @@
+# Update to .github/configs/runners.yaml
+# Add this entry to the mi300x list
+
+mi300x:
+- 'mi300x-amd_0'
+- 'mi300x-amd_1'
+- 'mi300x-amd_2'
+- 'mi300x-amd_3'
+- 'mi300x-amd_4'
+- 'mi300x-cr_0'
+- 'mi300x-amds_0'
+- 'mi300x-amds_1'
+- 'mi300x-amds_2'
+- 'mi300x-amds_3'
+- 'mi300x-local_0'           # <-- ADD THIS LINE FOR YOUR SERVER
+
+# Instructions:
+# 1. Open .github/configs/runners.yaml
+# 2. Find the mi300x section
+# 3. Add 'mi300x-local_0' to the list
+# 4. Commit and push the change
