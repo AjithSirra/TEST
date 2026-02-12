@@ -4,11 +4,11 @@
 
 ## 🎯 What You Get
 
-✅ **17 ready-to-use files** for running InferenceMAX benchmarks
-✅ **Self-hosted GitHub Actions runner** configuration
-✅ **4 perf changelog templates** for automated PR-based benchmarks
-✅ **3 helper scripts** for local testing
-✅ **Comprehensive documentation** with setup, usage, and troubleshooting
+✅ **17 ready-to-use files** for running InferenceMAX benchmarks <br>
+✅ **Self-hosted GitHub Actions runner** configuration <br>
+✅ **4 perf changelog templates** for automated PR-based benchmarks <br>
+✅ **3 helper scripts** for local testing <br>
+✅ **Comprehensive documentation** with setup, usage, and troubleshooting <br>
 
 ---
 
@@ -284,3 +284,4 @@ full-sweep --single-node --model-prefix gptoss --runner-type mi300x --precision 
 ---
 
 **Questions?** See [INDEX.md](INDEX.md) for complete file navigation.
+
